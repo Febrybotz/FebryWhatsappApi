@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Febry Official Api</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .profile {
+            margin-bottom: 20px;
+        }
+        .profile img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #333;
+        }
+        .profile h2 {
+            margin: 10px 0 5px;
+        }
+        #mute-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        #mute-button:hover {
+            background-color: #0056b3;
+        }
+      /* Tombol Toggle */
+        .toggle-button {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .toggle-button:hover {
+            background-color: #0056b3;
+        }
+        /* Menu List */
+        .menu {
+            position: fixed;
+            top: 50px;
+            left: 10px;
+            background-color: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            width: 200px;
+            display: none; /* Disembunyikan awalnya */
+        }
+        .menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .menu ul li {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            cursor: pointer;
+            text-align: center;
+            transition: 0.3s;
+        }
+        .menu ul li:hover {
+            background-color: #007BFF;
+            color: white;
+        }
+        /* Animasi Slide */
+        .show {
+            display: block !important;
+        }
+        .menu {
+            list-style: none;
+            padding: 0;
+        }
+        .whatsapp-button {
+            background-color: #007BFF; /* Warna biru */
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .whatsapp-button:hover {
+            background-color: #0056b3; /* Warna biru lebih gelap saat hover */
+        }
+        .menu li {
+            background-color: #007BFF;
+            color: white;
+            padding: 15px;
+            margin: 10px auto;
+            width: 80%;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .menu li:hover {
+            background-color: #0056b3;
+        }
+        a {
+            text-decoration: none;
+            color: white;
+            display: block;
+        }
+      /* Tombol Toggle */
+        .toggle-button {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            z-index: 1000;
+        }
+        
+        .toggle-button:hover {
+            background-color: #0056b3;
+        }
+        
+        /* Sidebar Menu */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: white;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+            padding-top: 60px;
+            transition: left 0.3s ease-in-out;
+            z-index: 999;
+        }
+        
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .sidebar ul li {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #ccc;
+        }
+        
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            display: block;
+            transition: 0.3s;
+        }
+        
+        .sidebar ul li a:hover {
+            background-color: #007BFF;
+            color: white;
+        }
+        
+        /* Tombol Close */
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        .info-box {
+            max-width: 600px;
+            background: white;
+            padding: 20px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #007BFF;
+        }
+        p {
+            text-align: justify;
+            font-size: 16px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile">
+        <img src="Febry.jpg" alt="Foto Profil">
+        <h2>Febry Official</h2>
+    </div>
+
+    <ul class="menu">
+        <li><a href="https://localhost/api">API DOWNLOADER</a></li>
+        <li><a href="https://localhost/api">API GAME</a></li>
+    </ul>
+
+</body>
+</html>
+
+     <div class="info-box">
+        <h1>Informasi</h1>
+        <p>
+[ BAHASA INGGRIS ]
+<p>
+TRIAL ACCESS
+        </p>
+        <p>
+[ BAHASA INDONESIA ]
+<p>
+AKSES PERCOBAAN</p>
+    </div>
+
+</body>
+</html>
+
+
+    <a href="https://wa.me/6288808498725" class="whatsapp-button">Kontak</a>
+
+</body>
+</html>
+
+   <!-- Tombol Mute/Unmute -->
+    <button id="mute-button">MUSIC</button>
+
+    <!-- Audio -->
+    <audio id="bg-music" autoplay loop>
+        <source src="music.mp3" type="audio/mp3">
+        Browser Anda tidak mendukung pemutaran audio.
+    </audio>
+
+    <script>
+        const music = document.getElementById("bg-music");
+        const muteButton = document.getElementById("mute-button");
+
+        muteButton.addEventListener("click", function() {
+            if (music.paused) {
+                music.play();
+                muteButton.textContent ="MUSIC ON";
+            } else {
+                music.pause();
+                muteButton.textContent = "MUSIC OFF";
+            }
+        });
+    </script>
+
+</body>
+</html>
+
+    <!-- Tombol Toggle -->
+    <button class="toggle-button" onclick="toggleMenu()">☰ Menu</button>
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar" id="sidebar">
+        <button class="close-button" onclick="toggleMenu()">✖</button>
+        <ul>
+            <li><a href="https://wa.me//6288218637706?text=" target="_blank">Friend Tercinta</a></li>
+            <li><a href="https://whatsapp.com/channel/0029VayYoe48qIzqMGwAFb0N" target="_blank">Saluran</a></li>
+            <li><a href="https://youtube.com/@FebryOfficial45" target="_blank">YouTube</a></li>
+        </ul>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var sidebar = document.getElementById("sidebar");
+            if (sidebar.style.left === "0px") {
+                sidebar.style.left = "-250px";
+            } else {
+                sidebar.style.left = "0px";
+            }
+        }
+    </script>
+
+</body>
+</html>
