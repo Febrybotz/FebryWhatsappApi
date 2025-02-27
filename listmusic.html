@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LIST MUSIC</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f0f0f0;
+		}
+		
+		.audio-container {
+			margin-bottom: 20px;
+			padding: 20px;
+			background-color: #fff;
+			border: 1px solid #ddd;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		
+		.audio-title {
+			font-weight: bold;
+			font-size: 18px;
+			margin-bottom: 10px;
+		}
+		
+		.audio-controls {
+			margin-top: 10px;
+		}
+		
+		.button {
+			background-color: #4CAF50;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		
+		.button:hover {
+			background-color: #3e8e41;
+		}
+	</style>
+</head>
+<body>
+	<h1>LIST MUSIC</h1>
+	<ul>
+		<li class="audio-container">
+			<div class="audio-title">PHONK - FUNK DO BOUNCE</div>
+			<audio id="audio1">
+				<source src="FuckDoBounce.mp3" type="audio/mp3">
+				Lagu 1
+			</audio>
+			<div class="audio-controls">
+				<button class="button" onclick="playAudio('audio1')">MULAI LAGU</button>
+				<button class="button" onclick="stopAudio('audio1')">STOP LAGU</button>
+			</div>
+		</li>
+		<li class="audio-container">
+			<div class="audio-title">JAWA - RASAH BALI SPEED UP</div>
+			<audio id="audio2">
+				<source src="RasahBali.mp3" type="audio/mp3">
+				Lagu 2
+			</audio>
+			<div class="audio-controls">
+				<button class="button" onclick="playAudio('audio2')">MULAI LAGU</button>
+				<button class="button" onclick="stopAudio('audio2')">STOP LAGU</button>
+			</div>
+		</li>
+		<li class="audio-container">
+			<div class="audio-title">Lagu 3 - Judul Lagu</div>
+			<audio id="audio3">
+				<source src="lagu3.mp3" type="audio/mp3">
+				Lagu 3
+			</audio>
+			<div class="audio-controls">
+				<button class="button" onclick="playAudio('audio3')">MULAI LAGU</button>
+				<button class="button" onclick="stopAudio('audio3')">STOP LAGU</button>
+			</div>
+		</li>
+	</ul>
+
+	<script>
+		function playAudio(id) {
+			var audio = document.getElementById(id);
+			audio.play();
+		}
+
+		function stopAudio(id) {
+			var audio = document.getElementById(id);
+			audio.pause();
+			audio.currentTime = 0;
+		}
+	</script>
+</body>
+</html>
