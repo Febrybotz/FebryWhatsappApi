@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 50px;
+        }
+        .login-box {
+            background: white;
+            padding: 20px;
+            width: 300px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 5px 0;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 18px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: darkblue;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Login ke Website</h1>
+    <div class="login-box">
+        <input type="text" id="name" placeholder="Masukkan Nama" required>
+        <input type="email" id="email" placeholder="Masukkan Email" required>
+        <input type="number" id="age" placeholder="Masukkan Umur" required>
+        <button onclick="login()">Login</button>
+    </div>
+
+    <script>
+        function login() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let age = document.getElementById("age").value;
+
+            if (name === "" || email === "" || age === "") {
+                alert("Harap Isi!");
+                return;
+            }
+
+            if (isNaN(age) || age < 1) {
+                alert("Masukkan umur yang valid!");
+                return;
+            }
+
+            // Simpan data ke local storage
+            localStorage.setItem("userName", name);
+            localStorage.setItem("userEmail", email);
+            localStorage.setItem("userAge", age);
+
+            // Arahkan ke home.html
+            window.location.href = "home.html";
+        }
+    </script>
+
+</body>
+</html>
