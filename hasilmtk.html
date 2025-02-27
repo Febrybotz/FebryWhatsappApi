@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Kuis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 50px;
+        }
+        .result-box {
+            background: white;
+            padding: 20px;
+            width: 300px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: green;
+        }
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 15px;
+            font-size: 18px;
+            color: white;
+            background-color: blue;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="result-box">
+        <h1>Hasil Kuis</h1>
+        <p id="correct"></p>
+        <p id="wrong"></p>
+        <p id="percentage"></p>
+        <a href="easy.html" class="button">Main Lagi</a>
+        <a href="home.html" class="button">Beranda</a>
+    </div>
+
+    <script>
+        // Ambil data dari URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const correct = parseInt(urlParams.get('correct')) || 0;
+        const wrong = parseInt(urlParams.get('wrong')) || 0;
+
+        // Hitung persentase
+        let total = correct + wrong;
+        let correctPercent = (correct / total) * 100;
+        let wrongPercent = (wrong / total) * 100;
+
+        // Tampilkan hasil
+        document.getElementById("correct").innerText = `Jawaban Benar: ${correct} (${correctPercent.toFixed(2)}%)`;
+        document.getElementById("wrong").innerText = `Jawaban Salah: ${wrong} (${wrongPercent.toFixed(2)}%)`;
+        document.getElementById("percentage").innerText = `Total Soal: ${total} dari 50`;
+    </script>
+
+</body>
+</html>
