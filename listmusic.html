@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>LIST MUSIC</title>
+	<title>List Lagu</title>
 	<style>
 		body {
 			font-family: Arial, sans-serif;
@@ -23,61 +23,65 @@
 			margin-bottom: 10px;
 		}
 		
-		.audio-controls {
-			margin-top: 10px;
-		}
-		
 		.button {
-			background-color: #4CAF50;
+			background-color: #007bff;
 			color: #fff;
 			padding: 10px 20px;
 			border: none;
 			border-radius: 5px;
 			cursor: pointer;
+			box-shadow: 0 0 10px rgba(255, 0, 0, 1);
 		}
 		
 		.button:hover {
-			background-color: #3e8e41;
+			background-color: #0069d9;
+		}
+		
+		.button:active {
+			background-color: #005cbf;
+		}
+		
+		.hr {
+			margin-top: 20px;
+			margin-bottom: 20px;
+			border: none;
+			border-top: 1px solid #ccc;
 		}
 	</style>
 </head>
 <body>
-	<h1>LIST MUSIC</h1>
-	<ul>
-		<li class="audio-container">
-			<div class="audio-title">PHONK - FUNK DO BOUNCE</div>
-			<audio id="audio1">
-				<source src="FuckDoBounce.mp3" type="audio/mp3">
-				Lagu 1
-			</audio>
-			<div class="audio-controls">
-				<button class="button" onclick="playAudio('audio1')">MULAI LAGU</button>
-				<button class="button" onclick="stopAudio('audio1')">STOP LAGU</button>
-			</div>
-		</li>
-		<li class="audio-container">
-			<div class="audio-title">JAWA - RASAH BALI SPEED UP</div>
-			<audio id="audio2">
-				<source src="RasahBali.mp3" type="audio/mp3">
-				Lagu 2
-			</audio>
-			<div class="audio-controls">
-				<button class="button" onclick="playAudio('audio2')">MULAI LAGU</button>
-				<button class="button" onclick="stopAudio('audio2')">STOP LAGU</button>
-			</div>
-		</li>
-		<li class="audio-container">
-			<div class="audio-title">Lagu 3 - Judul Lagu</div>
-			<audio id="audio3">
-				<source src="lagu3.mp3" type="audio/mp3">
-				Lagu 3
-			</audio>
-			<div class="audio-controls">
-				<button class="button" onclick="playAudio('audio3')">MULAI LAGU</button>
-				<button class="button" onclick="stopAudio('audio3')">STOP LAGU</button>
-			</div>
-		</li>
-	</ul>
+	<h1>PHONK BRAZIL</h1>
+	<div class="audio-container">
+		<div class="audio-title">Fuck Do Bounce</div>
+		<audio id="audio1">
+			<source src="FuckDoBounce.mp3" type="audio/mp3">
+			Lagu 1
+		</audio>
+		<button class="button" onclick="playAudio('audio1')">MULAI LAGU</button>
+		<button class="button" onclick="stopAudio('audio1')">STOP LAGU</button>
+	</div>
+	<hr class="hr">
+	<h1>JAWA</h1>
+	<div class="audio-container">
+		<div class="audio-title">Rasah Bali Speed Up Reverb</div>
+		<audio id="audio2">
+			<source src="RasahBali.mp3" type="audio/mp3">
+			Lagu 2
+		</audio>
+		<button class="button" onclick="playAudio('audio2')">MULAI LAGU</button>
+		<button class="button" onclick="stopAudio('audio2')">STOP LAGU</button>
+	</div>
+	<hr class="hr">
+	<h1>JAWA BARAT</h1>
+	<div class="audio-container">
+		<div class="audio-title">DUKA LAST CHILD</div>
+		<audio id="audio2">
+			<source src="Duka.mp3" type="audio/mp3">
+			Lagu 2
+		</audio>
+		<button class="button" onclick="playAudio('audio2')">MULAI LAGU</button>
+		<button class="button" onclick="stopAudio('audio2')">STOP LAGU</button>
+	</div>
 
 	<script>
 		function playAudio(id) {
