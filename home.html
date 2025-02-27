@@ -215,6 +215,14 @@
             font-size: 16px;
             color: #333;
         }
+        .welcome-box {
+            background: white;
+            padding: 20px;
+            width: 300px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 <body>
@@ -305,6 +313,36 @@ AKSES PERCOBAAN</p>
             } else {
                 sidebar.style.left = "0px";
             }
+        }
+    </script>
+
+</body>
+</html>
+
+<h1>Selamat Datang Di Febry Gabut</h1>
+    <div class="welcome-box">
+        <p id="welcomeText">Memuat...</p>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+        // Cek apakah user sudah login
+        if (localStorage.getItem("loggedIn") !== "true") {
+            alert("Anda harus login terlebih dahulu!");
+            window.location.href = "login.html";
+        } else {
+            // Tampilkan nama user
+            let userName = localStorage.getItem("userName");
+            document.getElementById("welcomeText").innerText = `Halo, ${userName}!`;
+        }
+
+        // Fungsi Logout
+        function logout() {
+            localStorage.removeItem("loggedIn");
+            localStorage.removeItem("userName");
+            localStorage.removeItem("userEmail");
+            localStorage.removeItem("userAge");
+            window.location.href = "login.html";
         }
     </script>
 
