@@ -215,6 +215,48 @@
             font-size: 16px;
             color: #333;
         }
+        /* Kontainer menu bawah */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            width: 94%;
+            background: white;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px 0;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Tombol kecil (Kontak & Profil) */
+        .nav-item {
+            text-align: center;
+            font-size: 14px;
+            color: white;
+            background: blue;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            width: 80px;
+        }
+
+        /* Tombol tengah (Home) lebih besar & bulat */
+        .nav-home {
+            width: 70px;
+            height: 70px;
+            background: red;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            text-decoration: none;
+            position: relative;
+            top: -20px; /* Menaikkan tombol tengah */
+        }
+        
     </style>
 </head>
 <body>
@@ -223,14 +265,6 @@
         <img src="Febry.jpg" alt="Foto Profil">
         <h2>Febry Official</h2>
     </div>
-
-    <ul class="menu">
-        <li><a href="https://localhost/api">API DOWNLOADER</a></li>
-        <li><a href="https://localhost/api">API GAME</a></li>
-    </ul>
-
-</body>
-</html>
 
      <div class="info-box">
         <h1>Informasi</h1>
@@ -244,12 +278,6 @@ TRIAL ACCESS
 <p>
 AKSES PERCOBAAN</p>
     </div>
-
-</body>
-</html>
-
-
-    <a href="https://wa.me/6288808498725" class="whatsapp-button">Kontak</a>
 
 </body>
 </html>
@@ -279,7 +307,7 @@ AKSES PERCOBAAN</p>
     </script>
 
 </body>
-</html>
+</html
 
     <!-- Tombol Toggle -->
     <button class="toggle-button" onclick="toggleMenu()">☰ Menu</button>
@@ -307,6 +335,15 @@ AKSES PERCOBAAN</p>
             }
         }
     </script>
+
+</body>
+</html>
+
+<div class="bottom-nav">
+        <a href="kontak.html" class="nav-item">KONTAK</a>
+        <a href="home.html" class="nav-home">HOME</a>
+        <a href="profil.html" class="nav-item">PROFIL</a>
+    </div>
 
 </body>
 </html>
